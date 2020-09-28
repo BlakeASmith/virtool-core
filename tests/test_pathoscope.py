@@ -1,22 +1,23 @@
-import os
-import sys
-import pytest
-import shutil
-import pickle
 import filecmp
+import os
+import pickle
+import shutil
+from pathlib import Path
+
+import pytest
 
 from virtool_core import pathoscope
 
-BASE_PATH = os.path.join(sys.path[0], "tests", "test_files", "pathoscope")
-BEST_HIT_PATH = os.path.join(BASE_PATH, "best_hit")
-EM_PATH = os.path.join(BASE_PATH, "em")
-MATRIX_PATH = os.path.join(BASE_PATH, "ps_matrix")
-SAM_PATH = os.path.join(BASE_PATH, "test_al.sam")
-SCORES = os.path.join(BASE_PATH, "scores")
-TSV_PATH = os.path.join(BASE_PATH, "report.tsv")
-UNU_PATH = os.path.join(BASE_PATH, "unu")
-UPDATED_VTA_PATH = os.path.join(BASE_PATH, "updated.vta")
-VTA_PATH = os.path.join(BASE_PATH, "test.vta")
+BASE_PATH = Path(__file__).parent/"tests/test_files/pathoscope"
+BEST_HIT_PATH = BASE_PATH/"best_hit"
+EM_PATH = BASE_PATH/"em"
+MATRIX_PATH = BASE_PATH/"ps_matrix"
+SAM_PATH = BASE_PATH/"test_al.sam"
+SCORES = BASE_PATH/"scores"
+TSV_PATH = BASE_PATH/"report.tsv"
+UNU_PATH = BASE_PATH/"unu"
+UPDATED_VTA_PATH = BASE_PATH/"updated.vta"
+VTA_PATH = BASE_PATH/"test.vta"
 
 
 @pytest.fixture(scope="session")
