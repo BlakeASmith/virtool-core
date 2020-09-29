@@ -8,7 +8,7 @@ import pytest
 
 from virtool_core import pathoscope
 
-BASE_PATH = Path(__file__).parent/"tests/test_files/pathoscope"
+BASE_PATH = Path(__file__).parent/"test_files/pathoscope"
 BEST_HIT_PATH = BASE_PATH/"best_hit"
 EM_PATH = BASE_PATH/"em"
 MATRIX_PATH = BASE_PATH/"ps_matrix"
@@ -76,10 +76,7 @@ def test_em(tmpdir, theta_prior, pi_prior, epsilon, max_iter, expected_em):
 
 
 def test_compute_best_hit():
-    """
-    Test that :meth:`compute_best_hit` gives the expected result given some input data.
-
-    """
+    """Test that :meth:`compute_best_hit` gives the expected result given some input data."""
     with open(MATRIX_PATH, "rb") as handle:
         matrix_tuple = pickle.load(handle)
 
